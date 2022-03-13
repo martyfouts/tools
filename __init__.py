@@ -44,6 +44,8 @@ from . camera_op import TOOL_OT_place_camera, TOOL_OT_add_camera
 from . tool_panel import TOOL_PT_tools, TOOL_PT_camera_panel, TOOL_PT_modifier_panel
 from . modifiers import TOOL_OT_modifier_apply_all, TOOL_OT_modifier_remove_all
 from . mesh_ops import TOOL_OT_mesh_duplicate
+from . node_ops import NODES_OT_color_by_type
+from . node_panel import NODES_PT_tools
 
 classes = [
     TOOL_OT_place_camera,
@@ -54,6 +56,8 @@ classes = [
     TOOL_OT_modifier_remove_all,
     TOOL_PT_modifier_panel,
     TOOL_OT_mesh_duplicate,
+    NODES_OT_color_by_type,
+    NODES_PT_tools,
     ]
 
 def register():
