@@ -60,10 +60,10 @@ class TOOL_OT_mesh_duplicate(Operator):
         if context.mode != 'OBJECT':
             cls.poll_message_set("Must be in Object mode")
             return False
-        if not context.object:
+        if not context.active_object:
             cls.poll_message_set("No object selected")
             return False
-        if not context.object.type == 'MESH':
+        if not context.active_object.type == 'MESH':
             cls.poll_message_set("Selected object is not a mesh")
             return False
         return True
