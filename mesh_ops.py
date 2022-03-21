@@ -57,9 +57,16 @@ class TOOL_OT_mesh_duplicate(Operator):
     
     @classmethod
     def poll(cls, context):
-        return context.mode == 'OBJECT' \
-            and context.object \
-            and context.object.type == 'MESH'
+        if context.mode != 'OBJECT':
+            cls.poll_message_set("Must be in Object mode")
+            return False
+        if not context.object:
+            cls.poll_message_set("No object selected")
+            return False
+        if not context.object.type == 'MESH':
+            cls.poll_message_set("Selected object is not a mesh")
+            return False
+        return True
     
     def execute(self, context):
         object = context.object

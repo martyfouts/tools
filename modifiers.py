@@ -44,9 +44,15 @@ class TOOL_OT_modifier_remove_all(Operator):
     bl_options = {"REGISTER", "UNDO"}
 
     @classmethod
-    def poll(self, context):
+    def poll(cls, context):
         object = context.object
-        return object and object.mode == "OBJECT"
+        if not object:
+            cls.poll_message_set("No object selected")
+            return False
+        if object.mode != "OBJECT":
+            cls.poll_message_set("Not in object mode")
+            return False
+        return True
 
     def execute(self, context):
         active_object = context.view_layer.objects.active
