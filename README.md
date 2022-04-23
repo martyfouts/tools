@@ -43,9 +43,28 @@ Applies all of the modifiers on the object stack
 ### `TOOL_OT_modifier_remove_all`
 Removes all of the modifiers from the object stack
 
+## node_ops.py
+
+### `get_active_node_tree`
+
+finds the active tree for the node editor.  Needs to be updated to work
+with the compositor and geometry nodes editors
+
+### `get_node_types`
+
+returns a list of node types currently in use in this editor
+
+### `NODES_OT_color_by_type`
+
+sets the color of every node that has the same type as the selected node
+
+# Node Panel
+
+The code to manage the add-on's node editor sidebar
+
 # Tool Panel
 
-The code to manage the add-on's sidebar panel and its subpanels.
+The code to manage the add-on's view3d sidebar panel and its subpanels.
 
 The subpanels match the categories of tools but a category is only included if
 at least one of the category tools does not add itself to a menu.
