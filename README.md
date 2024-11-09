@@ -1,3 +1,6 @@
+# Deprecated
+This repository is now deprecated. The examples apply to Blender versions 3.x. It has not been tested on newer versions of Blender.
+
 # Introduction
 
 This Blender Add-on is a growing collection of tools that are meant to speed
